@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iMuzic - Spotify Music Recommendation System</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <style>
+            body {
+                background-image: url("https://i.postimg.cc/4xgNnkfX/Untitled-design.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: local;
+            }
+        </style>
+    </head>
+<body>
+    <div id="header">
+        <a href="index.html" id="logo"><img src="./images/logo.png" alt="logo"></a>
+            <div>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+        
+                    <li class="selected">
+                        <a href="app.html">App</a>
+                    </li>
+    
+                </ul>
+            </div>
+        </div>
+
+    <main>
+        <input type="text" id="search_input" placeholder="Search for an artist or song" required>
+        <button id="recommend_btn">Get Recommendations</button>
+
+        <div id="recommendations">
+            <!-- Recommendations will be dynamically populated here -->
+        </div>
+    </main>
+
+    <script>
+        const recommendBtn = document.getElementById('recommend_btn');
+        recommendBtn.addEventListener('click', async () => {
+            const searchInput = document.getElementById('search_input').value;
+            try {
+                const response = await fetch(`http://localhost:5000/get_recommendations?seed_name=${searchInput}`);
+                const data = await response.json();
+                // Process the data and populate the recommendations div
+                const recommendationsDiv = document.getElementById('recommendations');
+                recommendationsDiv.innerHTML = `
+                    <h3>Recommendations based on ${data.seed_song} by ${data.seed_artist}:</h3>
+                    <!-- Loop through recommended music -->
+                    <!-- Example recommendation card -->
+                    ${data.recommended_music_names.map((name, index) => {
+                    if (name && data.recommended_music_posters[index] && data.recommended_audio_urls[index]) {
+                        return `
+                            <div class="recommendation">
+                                <p>${name}</p>
+                                <img src="${data.recommended_music_posters[index]}" alt="Recommended Music Poster">
+                                <!-- Audio player for recommended music -->
+                                <audio controls>
+                                    <source src="${data.recommended_audio_urls[index]}" type="audio/mp3">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        `;
+                    } else {
+                        return ''; // Return an empty string for empty recommendation boxes
+                    }
+                }).join('')}
+                    <!-- End of recommendation loop -->
+                `;
+            } catch (error) {
+                console.error('Error fetching recommendations:', error);
+                // TODO: Handle error display if needed
+            }
+        });
+    </script>
+
+</body>
+</html>
