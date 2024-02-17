@@ -64,7 +64,7 @@ def get_recommendations():
                 'recommended_audio_urls': recommended_audio_urls
             })
     except Exception as e:
-        return jsonify({'Error': f'Error fetching recommendations: {str(e)}'}), 500
+        return jsonify({'Error fetching recommendations'}), 500
     
 if __name__=='__main__':
     app.run(debug=True, host='localhost', port='5000')
