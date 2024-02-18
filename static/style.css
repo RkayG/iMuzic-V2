@@ -225,7 +225,7 @@ body {
     display: block;
     float: inline-end;
     margin-top: 20px;
-    margin-right: 10%;
+    margin-right: 8%;
     padding: 10px 17px;
     background-color: hsl(212, 84%, 22%);
     color: #fff;
@@ -260,7 +260,7 @@ body {
 }
 #recommendations .recommendation {
     height: 300px;
-    margin: 30px;
+    margin: auto;
     margin-top: 50px;
     width: calc(25% - 10px);
     margin-bottom: 20px; 
