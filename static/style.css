@@ -327,7 +327,7 @@ body {
 #footer div {
 	margin:0 auto;
 	padding:0 10px;
-	width:940px;
+	width:auto;
     
 }
 #footer div p {
@@ -497,11 +497,11 @@ body {
 }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     
     #footer div {
         padding: 0 5px; /* Adjusted padding for smaller screens */
-        max-width: 940px; /* Maximum width for larger screens */
+        width: 100%; /* Maximum width for larger screens */
     }
     
     #footer div p {
@@ -566,11 +566,7 @@ body {
 /* for app.html */
 @media screen and (max-width: 1200px) {
     body {
-        background-size: unset;
+        background-size: contain;
         
     }
-}
-
-main {
-    width: 100%;
 }

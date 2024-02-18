@@ -15,8 +15,8 @@ def home():
 def app_page():
     return render_template('app.html')
 
-CLIENT_ID = "c18a4ee6c6a34de6941e5ccb6f6cdf5d"
-CLIENT_SECRET = "a77a3b4d50d3400987b9403176322ed1"
+CLIENT_ID = os.environ.get('CLIENT_ID')
+CLIENT_SECRET = os.environ.get('CLIENT_SECRET')
 
 # Initialize Spotify client
 client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)
@@ -65,6 +65,3 @@ def get_recommendations():
             })
     except Exception as e:
         return jsonify({'Error fetching recommendations'}), 500
-    
-if __name__=='__main__':
-    app.run(debug=True, host='localhost', port='5000')
