@@ -129,8 +129,8 @@ body {
     font-style: italic;
     font-size: 15px;
     font-weight:600;
-	letter-spacing:.1em;
-	line-height:24px;
+    letter-spacing:.1em;
+    line-height:24px;
     padding-left: 120px;
     color: #4C0B42;
     margin-right: -150px;
@@ -366,13 +366,15 @@ body {
 /** ----- Responsive styling ----------- */
 /* Media Query for mobile */
 /* about div */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
     .about {
-        height: auto;
-        margin: 20px;
+        height: auto;  
         padding-top: 70px;
         padding-left: 20px;
-        width: 80%;
+        padding-right: 20px;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 80px;
     }
 
     .about-content img {
@@ -385,18 +387,18 @@ body {
     }
 
     .about h1 {
-        top: 980px;
-        left: 17%;
+        top: 800px;
+        left: 15%;
         margin-left: 0;
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .about-content p {
-        font-size: 12px;
+        font-size: auto;
         float: none;
         width: 80%;
-        margin-top: 20px;
-        padding-left: 0;
+        margin-top: 30px;
+        padding-left: 9px;
         margin-right: 0;
         text-indent: 0;
         margin-bottom: 30px;
@@ -413,7 +415,7 @@ body {
 @media screen and (max-width: 968px) {
     .row {
         padding: 20px; /* Reduced padding for smaller screens */
-        margin: 0 20px 40px 20px; /* Reduced margin for smaller screens */
+        margin: 0 20px 80px 20px; /* Reduced margin for smaller screens */
     }
 
     .row h3 {
@@ -555,5 +557,20 @@ body {
     .features h1 {
         font-size: auto;
     }
+    .landing {
+        height: 600px;
+        margin-bottom: 80px;
+    }
 
+}
+/* for app.html */
+@media screen and (max-width: 1200px) {
+    body {
+        background-size: unset;
+        
+    }
+}
+
+main {
+    width: 100%;
 }
