@@ -15,8 +15,8 @@ def home():
 def app_page():
     return render_template('app.html')
 
-CLIENT_ID = os.environ.get('CLIENT_ID')
-CLIENT_SECRET = os.environ.get('CLIENT_SECRET')
+CLIENT_ID = "c18a4ee6c6a34de6941e5ccb6f6cdf5d"
+CLIENT_SECRET = "a77a3b4d50d3400987b9403176322ed1"
 
 # Initialize Spotify client
 client_credentials_manager = SpotifyClientCredentials(client_id=CLIENT_ID, client_secret=CLIENT_SECRET)

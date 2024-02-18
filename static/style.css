@@ -14,13 +14,14 @@ body {
 	width:931px;
     margin-top: -8px;
 }
+#header .menu-icon {
+    display: none;
+}
 #header a img {
 	float:left;
     margin-left: 5%;
     width: 150px;
-    height: 120px;
-    
-
+    height: 120px;    
 }
 #header div ul {
 	float:right;
@@ -52,9 +53,6 @@ body {
 #header div ul li.selected a, #header div ul li a:hover {
 	color:#1bb5ac;
 }
-.active-link {
-    background:url(./images/bg-nav-selected.png) repeat-x;
-}
 
 .landing {
     position: relative;
@@ -63,7 +61,7 @@ body {
     background-size: cover;
     width: 100%;
     color: white;
-    height: 600px;
+    height: 800px;
 }
 
  /* Dim the background image */
@@ -75,12 +73,13 @@ body {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
 }
 
 /* Text styling */
 .landing .typing-text {
     font-family: Ubuntu;
-    font-size: 36px; /* Adjust font size */
+    font-size: xx-large;
     font-weight: bold;
     position: absolute;
     top: 50%;
@@ -116,8 +115,8 @@ body {
 }
 .about h1 {
     position: absolute;
-    top: 910px;
-    margin-left: 20%;
+    top: 1090px;
+    margin-left: 18%;
     color: transparent;
     background-image: linear-gradient(140deg,#ea7c92 30.24% ,hsl(213, 96%, 18%));
     background-clip: text;
@@ -140,7 +139,7 @@ body {
 .get-started-btn {
     position: absolute;
     padding: 13px 35px;
-    top: 1200px;
+    top: 1400px;
     left: 300px;
     background-color: hsl(213, 96%, 18%);
     color: white;
@@ -226,7 +225,7 @@ body {
     display: block;
     float: inline-end;
     margin-top: 20px;
-    margin-right: 145px;
+    margin-right: 10%;
     padding: 10px 17px;
     background-color: hsl(212, 84%, 22%);
     color: #fff;
@@ -361,4 +360,200 @@ body {
 }
 #footer div .connect a#twitter {
 	background:url(./images/icons.png) no-repeat -93px 0;
+}
+
+
+/** ----- Responsive styling ----------- */
+/* Media Query for mobile */
+/* about div */
+@media screen and (max-width: 768px) {
+    .about {
+        height: auto;
+        margin: 20px;
+        padding-top: 70px;
+        padding-left: 20px;
+        width: 80%;
+    }
+
+    .about-content img {
+        width: 100%;
+        height: auto;
+        float: none;
+        margin-left: 20%;
+        margin-top: -30px;
+        margin-bottom: -5px;
+    }
+
+    .about h1 {
+        top: 980px;
+        left: 17%;
+        margin-left: 0;
+        font-size: 20px;
+    }
+
+    .about-content p {
+        font-size: 12px;
+        float: none;
+        width: 80%;
+        margin-top: 20px;
+        padding-left: 0;
+        margin-right: 0;
+        text-indent: 0;
+        margin-bottom: 30px;
+    }
+
+    .get-started-btn {
+        padding: 10px 15px;
+        margin: 20px auto;
+        left: 15%;
+        top: auto;
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 968px) {
+    .row {
+        padding: 20px; /* Reduced padding for smaller screens */
+        margin: 0 20px 40px 20px; /* Reduced margin for smaller screens */
+    }
+
+    .row h3 {
+        margin-top: 30px; /* Reduced margin for smaller screens */
+    }
+
+    /* Responsive adjustments for row1 and row3 */
+    .row1, .row3 {
+        padding-left: 20px; /* Adjusted padding for smaller screens */
+        padding-right: 20px; /* Adjusted padding for smaller screens */
+    }
+
+    .row1-text, .row3-text {
+        float: none; /* Remove float for smaller screens */
+        width: auto; /* Reset width for smaller screens */
+        text-align: center; /* Center align text for smaller screens */
+        margin-right: 0; /* Remove margin for smaller screens */
+    }
+
+    .row1 img, .row3 img {
+        float: none; /* Remove float for smaller screens */
+        display: block; /* Ensure images are centered for smaller screens */
+        margin: 0 auto; /* Center align images for smaller screens */
+    }
+
+    /* Responsive adjustments for row2 and row4 */
+    .row2, .row4 {
+        padding-left: 20px; /* Adjusted padding for smaller screens */
+        padding-right: 20px; /* Adjusted padding for smaller screens */
+    }
+
+    .row2-text, .row4-text {
+        float: none; /* Remove float for smaller screens */
+        width: auto; /* Reset width for smaller screens */
+        text-align: center; /* Center align text for smaller screens */
+    }
+
+    .row2 img, .row4 img {
+        float: none; /* Remove float for smaller screens */
+        display: block; /* Ensure images are centered for smaller screens */
+        margin: 0 auto; /* Center align images for smaller screens */
+    }
+}
+@media screen and (max-width: 1200px) {
+    /* Common styles for all elements */
+    .why-choose-us {
+        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        justify-content: space-around;
+        margin-bottom: 120px; /* Reduced margin for smaller screens */
+        margin-top: 40px; /* Reduced margin for smaller screens */
+        text-align: center; /* Center align content */
+    }
+
+    .why-choose-us h1 {
+        margin: 20px auto; /* Center align the heading */
+    }
+
+    .why-choose-us p,
+    .why-choose-us h3 {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 280px; /* Limit width on larger screens */
+        margin: 15px auto; /* Center align and provide margin */
+    }
+
+    .why-row {
+        margin-top: 60px; /* Adjusted margin for smaller screens */
+    }
+
+/* Media queries for desktop */
+@media screen and (min-width: 1024px) {
+    .why-choose-us {
+        margin-bottom: 150px; /* Original margin for desktop screens */
+        margin-top: 60px; /* Original margin for desktop screens */
+    }
+
+    .why-row {
+        margin-top: 100px; /* Original margin for desktop screens */
+    }
+}
+}
+
+@media screen and (max-width: 768px) {
+    
+    #footer div {
+        padding: 0 5px; /* Adjusted padding for smaller screens */
+        max-width: 940px; /* Maximum width for larger screens */
+    }
+    
+    #footer div p {
+        margin: 10px 0; /* Adjusted margin for smaller screens */
+        text-align: center;
+    }
+    
+    #footer div .connect {
+        padding: 10px; /* Adjusted padding for smaller screens */ 
+        float: left;
+        margin-left: 10%;
+    }
+    
+    #footer div .connect a {
+        margin: 0 10px; /* Adjusted margin for smaller screens */
+    }
+    
+    #footer div .connect a#googleplus {
+        background: url(./images/icons.png) no-repeat 0 0;
+    }
+    
+    #footer div .connect a#contact {
+        background: url(./images/icons.png) no-repeat -31px 0;
+    }
+    
+    #footer div .connect a#facebook {
+        background: url(./images/icons.png) no-repeat -62px 0;
+    }
+    
+    #footer div .connect a#twitter {
+        background: url(./images/icons.png) no-repeat -93px 0;
+    }
+    
+}
+@media screen and (max-width: 1200px) {
+    #header {
+        height: 100px;
+        margin-top: -7px;
+    }
+    #header a img {
+        height: 100px;
+        width: 120px;
+    }
+    #header ul {
+        position: absolute;
+        right: 3%;
+        top: -10px;
+    }
+    .landing .typing-text {
+        font-size: x-large;
+        width: 80%;
+    }
+    .features h1 {
+        font-size: auto;
+    }
+
 }

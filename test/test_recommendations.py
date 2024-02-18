@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch
-from recommendations import get_recommendations
+from app import get_recommendations
 
 @pytest.mark.parametrize("seed_name", [
     "asake",  # Replace with an actual song or artist name
