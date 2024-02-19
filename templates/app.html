@@ -78,9 +78,10 @@
                     <!-- Example recommendation card -->
                     ${data.recommended_music_names.map((name, index) => {
                     if (name && data.recommended_music_posters[index] && data.recommended_audio_urls[index]) {
+                        const truncatedName = name.length > 32 ? name.slice(0, 32) + '...' : name;
                         return `
                             <div class="recommendation">
-                                <p>${name}</p>
+                                <p>${truncatedName}</p>
                                 <img src="${data.recommended_music_posters[index]}" alt="Recommended Music Poster">
                                 <!-- Audio player for recommended music -->
                                 <audio controls>
