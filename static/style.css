@@ -260,8 +260,6 @@ body {
 }
 #recommendations .recommendation {
     height: 300px;
-    display: flex;
-    margin: auto;
     margin-top: 50px;
     width: calc(25% - 10px);
     margin-bottom: 20px; 
@@ -269,6 +267,7 @@ body {
 #recommendations .recommendation img {
     width: 300px;
     height: 200px;
+    margin: 10px;
 }
 #recommendations .recommendation p {
     text-align: center;
@@ -276,6 +275,7 @@ body {
 #recommendations audio {
     margin-top: 10px;
     height: 40px;
+    margin: 10px;
 }
 /** ---- why-choose-us ---- */
 .why-choose-us {
