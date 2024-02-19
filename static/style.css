@@ -260,7 +260,8 @@ body {
 }
 #recommendations .recommendation {
     height: 300px;
-    margin: 12px;
+    display: flex;
+    margin: auto;
     margin-top: 50px;
     width: calc(25% - 10px);
     margin-bottom: 20px; 
